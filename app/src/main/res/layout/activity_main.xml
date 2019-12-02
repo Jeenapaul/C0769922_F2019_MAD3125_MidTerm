@@ -1,99 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <EditText
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#D5D9DF"
+android:orientation="vertical"
+tools:context=".MainActivity">
+
+    <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your sin Number"
-        android:textSize="30dp"
-        android:id="@+id/Sin"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/Sin"
-        android:textSize="20dp"
-        android:id="@+id/txtFirst"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtFirst"
-        android:textSize="20dp"
-        android:id="@+id/txtLast"/>
+        android:layout_height="wrap_content">
 
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Gender"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtLast"
-        android:textSize="20dp"
-        android:id="@+id/txtGender"/>
+        <TextView
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Birth Date"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/txtGender"
-        android:textSize="20dp"
-        android:id="@+id/txtBirth"/>
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/btnConfirm"
-    android:layout_below="@+id/txtBirth"
-    android:layout_marginTop="30dp"
-    android:text="Confirm"/>
+            android:layout_width="150dp"
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/txtGross"
-    android:layout_below="@id/btnConfirm"
-    android:layout_marginTop="20dp"
-    android:hint="Total Income"
-    android:textSize="25dp"/>
+            android:layout_height="wrap_content"
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtRrsp"
-        android:layout_below="@id/txtGross"
-        android:layout_marginTop="30dp"
-        android:hint="Enter RRSP"
-        android:textSize="25dp"/>
+            android:text="SIN Number"
 
+            app:layout_constraintBottom_toBottomOf="parent"
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSubmit"
-        android:layout_below="@id/txtRrsp"
-        android:layout_marginTop="40dp"
-        android:ems="20"
-        android:layout_centerHorizontal="true"
-        android:hint="Submit"
-        android:textSize="15dp"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 
+        <EditText
 
+            android:id="@+id/txtSin"
 
+            android:layout_width="0dp"
 
+            android:layout_height="wrap_content"
 
+            android:layout_weight="1" />
 
-
-
-</RelativeLayout>
+    </LinearLayout>
