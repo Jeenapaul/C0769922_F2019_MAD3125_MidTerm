@@ -57,6 +57,15 @@
     android:layout_marginTop="30dp"
     android:text="Confirm"/>
 
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/txtGross"
+    android:layout_below="@id/btnConfirm"
+    android:layout_marginTop="20dp"
+    android:hint="Total Income"
+    android:textSize="25dp"/>
+
     
 
 
