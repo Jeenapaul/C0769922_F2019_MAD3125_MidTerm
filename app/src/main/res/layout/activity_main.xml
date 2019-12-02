@@ -66,7 +66,18 @@
     android:hint="Total Income"
     android:textSize="25dp"/>
 
-    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtRrsp"
+        android:layout_below="@id/txtGross"
+        android:layout_marginTop="30dp"
+        android:hint="Enter RRSP"
+        android:textSize="25dp"/>
+
+
+
+
 
 
 
