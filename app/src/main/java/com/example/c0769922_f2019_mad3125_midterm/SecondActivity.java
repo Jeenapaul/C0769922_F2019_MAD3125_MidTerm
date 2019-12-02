@@ -29,6 +29,11 @@ public class SecondActivity extends AppCompatActivity {
         federalTax = (TextView)findViewById(R.id.txtfederalTax);
         provincialTax = (TextView)findViewById(R.id.txtprovincialTax);
         carryFrwdCpp = (TextView)findViewById(R.id.txtcarryForwardCpp);
+
+        tEi = (TextView)findViewById(R.id.txteI);
+        carryFrwdRRSP = (TextView)findViewById(R.id.txtRrspContributed);
+        ttaxinc = (TextView)findViewById(R.id.txtIncome);
+        //taxPaid = (TextView)findViewById(R.id.txt);
         
 
     }
