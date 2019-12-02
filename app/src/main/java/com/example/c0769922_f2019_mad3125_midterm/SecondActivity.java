@@ -16,7 +16,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView carryFrwdRRSP;
     TextView ttaxinc;
     TextView taxPaid;
-
+    private double eI;
 
 
     @Override
