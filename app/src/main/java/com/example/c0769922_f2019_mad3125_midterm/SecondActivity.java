@@ -9,7 +9,15 @@ public class SecondActivity extends AppCompatActivity {
     TextView fName;
     TextView Age;
     TextView taxfilingdate;
-   
+    TextView federalTax;
+    TextView provincialTax;
+    TextView carryFrwdCpp;
+    TextView tEi;
+    TextView carryFrwdRRSP;
+    TextView ttaxinc;
+    TextView taxPaid;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
