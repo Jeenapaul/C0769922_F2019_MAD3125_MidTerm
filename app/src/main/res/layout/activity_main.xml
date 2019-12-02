@@ -30,6 +30,8 @@
         android:textSize="20dp"
         android:id="@+id/txtLast"/>
 
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +49,14 @@
         android:layout_below="@+id/txtGender"
         android:textSize="20dp"
         android:id="@+id/txtBirth"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnConfirm"
+    android:layout_below="@+id/txtBirth"
+    android:layout_marginTop="30dp"
+    android:text="Confirm"/>
+
     
 
 
