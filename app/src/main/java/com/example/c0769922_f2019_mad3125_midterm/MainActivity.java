@@ -5,16 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
 
     private int remaining;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
         genderGroup = (RadioGroup) findViewById(R.id.radioGroup1);
 
 
-
-
-
         int selectedId = genderGroup.getCheckedRadioButtonId();
 
         radioGenderButton = (RadioButton) findViewById(selectedId);
@@ -77,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         month = calendar.get(Calendar.MONTH);
 
         year = calendar.get(Calendar.YEAR);
-
 
 
         birth.setOnClickListener(new View.OnClickListener() {
@@ -97,8 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
 
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(),android.R.style.Theme_Black, datePickerListener, year,month,day);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(), android.R.style.Theme_Black, datePickerListener, year, month, day);
 
                 datePickerDialog.getDatePicker().setMaxDate(new Date().getTime());
 
@@ -109,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -117,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
-
 
 
                     String sinNum = String.valueOf(sin.getText());
@@ -145,25 +145,19 @@ public class MainActivity extends AppCompatActivity {
                         String eightDigits = sinNum.substring(0, 8);
 
 
-
                         String checkDigit = sinNum.substring(8);
-
 
 
                         System.out.println("The first eight digits are: " + eightDigits);
 
 
-
                         System.out.println("The Check-digit is: " + checkDigit);
-
 
 
                         int total;
 
 
-
                         int total2 = 0;
-
 
 
                         int counter = 0;
@@ -171,29 +165,22 @@ public class MainActivity extends AppCompatActivity {
                         int first = Integer.parseInt(eightDigits.substring(0, 1)) * 1;
 
 
-
                         int second = Integer.parseInt(eightDigits.substring(1, 2)) * 2;
-
 
 
                         int third = Integer.parseInt(eightDigits.substring(2, 3)) * 1;
 
 
-
                         int fourth = Integer.parseInt(eightDigits.substring(3, 4)) * 2;
-
 
 
                         int fifth = Integer.parseInt(eightDigits.substring(4, 5)) * 1;
 
 
-
                         int sixth = Integer.parseInt(eightDigits.substring(5, 6)) * 2;
 
 
-
                         int seventh = Integer.parseInt(eightDigits.substring(6, 7)) * 1;
-
 
 
                         int eighth = Integer.parseInt(eightDigits.substring(7, 8)) * 2;
@@ -202,105 +189,79 @@ public class MainActivity extends AppCompatActivity {
                         if (second > 9) {
 
 
-
                             int firstHalf = second / 10;
-
 
 
                             int secondHalf = second % 10;
 
 
-
                             int sum = firstHalf + secondHalf;
-
 
 
                             second = sum;
 
 
-
                         }
-
 
 
                         if (fourth > 9) {
 
 
-
                             int firstHalf1 = fourth / 10;
-
 
 
                             int secondHalf1 = fourth % 10;
 
 
-
                             int sum1 = firstHalf1 + secondHalf1;
-
 
 
                             fourth = sum1;
 
 
-
                         }
-
 
 
                         if (sixth > 9) {
 
 
-
                             int firstHalf2 = sixth / 10;
-
 
 
                             int secondHalf2 = sixth % 10;
 
 
-
                             int sum2 = firstHalf2 + secondHalf2;
-
 
 
                             sixth = sum2;
 
 
-
                         }
-
 
 
                         if (eighth > 9) {
 
 
-
                             int firstHalf3 = eighth / 10;
-
 
 
                             int secondHalf3 = eighth % 10;
 
 
-
                             int sum3 = firstHalf3 + secondHalf3;
-
 
 
                             eighth = sum3;
 
 
-
                         }
-
 
 
                         total = first + second + third + fourth + fifth + sixth + seventh + eighth;
 
 
-
                         System.out.println("This is the total so far: " + total);
-
 
 
                         total2 = total;
@@ -316,7 +277,6 @@ public class MainActivity extends AppCompatActivity {
                         int result = counter * 10;
 
 
-
                         System.out.println("This is the next highest number divisble by 10: " + result);
 
                         remaining = result - total2;
@@ -324,13 +284,10 @@ public class MainActivity extends AppCompatActivity {
                         String ewref = String.valueOf(sin.getText());
 
 
-
                         if (remaining == Integer.parseInt(checkDigit)) {
 
 
-
                             System.out.println("You've entered a valid Social Insurance Number.");
-
 
 
                         } else {
@@ -340,13 +297,10 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
-
                         if (ageee >= 18) {
 
 
-
                             String mIncome = String.valueOf(income.getText());
-
 
 
                             String upperString = fname.substring(0, 1).toUpperCase() + fname.substring(1);
@@ -354,7 +308,6 @@ public class MainActivity extends AppCompatActivity {
                             final String both = lname.toUpperCase() + "," + upperString;
 
                             System.out.println("dddddddd  " + dateofBirth + "  " + mAge + " " + both);
-
 
 
                             Date c = Calendar.getInstance().getTime();
@@ -379,6 +332,84 @@ public class MainActivity extends AppCompatActivity {
 
                             startActivity(intent);
 
+                        } else {
+
+                            Typeface font = Typeface.createFromAsset(getAssets(), "fonts/SpaceQuestItalic-60Rx.ttf");
+
+                            SpannableString spannableString = new SpannableString(" Not eligible to file tax for current year 2019 ");
+
+                            spannableString.setSpan(
+
+                                    new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_dark)),
+
+                                    0,
+
+                                    spannableString.length(),
+
+                                    0);
+
+
+                            //spannableString.setSpan(new TypefaceSpan(font), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+                            Toast.makeText(MainActivity.this, spannableString, Toast.LENGTH_SHORT).show();
+
+                        }
+
+
+                    } else {
+
+                        //
+
+                        sin.setError("Invalid Social Insurance Number");
+
+                    }
+
+
+                } else {
+
+                    Toast.makeText(MainActivity.this, "Must fill all the Fields", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            }
+
+        });
     }
-    //test
+
+        public Boolean checkSin(String sn) {
+
+            Boolean check = false;
+
+
+
+            String no = "\\d*\\.?\\d+"; //d is considered as [0-9] & .? as Optional decimal point
+
+
+
+            CharSequence inputStr = sn;
+
+
+
+            Pattern ptn = Pattern.compile(no, Pattern.CASE_INSENSITIVE);
+
+            Matcher matcher = ptn.matcher(inputStr);
+
+
+
+            if (matcher.matches()) {
+
+                check = true;
+
+            }
+
+            return check;
+
+
+
+    }
+
 }
+
+
