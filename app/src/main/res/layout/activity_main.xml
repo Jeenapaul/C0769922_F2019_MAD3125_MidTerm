@@ -30,6 +30,16 @@
         android:textSize="20dp"
         android:id="@+id/txtLast"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Gender"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtLast"
+        android:textSize="20dp"
+        android:id="@+id/txtGender"/>
+
+
 
 
 </RelativeLayout>
