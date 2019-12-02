@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -302,6 +304,80 @@ public class MainActivity extends AppCompatActivity {
 
 
                         total2 = total;
+
+                        while (total > 0) {
+
+                            counter++;
+
+                            total = total - 10;
+
+                        }
+
+                        int result = counter * 10;
+
+
+
+                        System.out.println("This is the next highest number divisble by 10: " + result);
+
+                        remaining = result - total2;
+
+                        String ewref = String.valueOf(sin.getText());
+
+
+
+                        if (remaining == Integer.parseInt(checkDigit)) {
+
+
+
+                            System.out.println("You've entered a valid Social Insurance Number.");
+
+
+
+                        } else {
+
+                            System.out.println("Invalid Social Insurance Number.");
+
+                        }
+
+
+
+                        if (ageee >= 18) {
+
+
+
+                            String mIncome = String.valueOf(income.getText());
+
+
+
+                            String upperString = fname.substring(0, 1).toUpperCase() + fname.substring(1);
+
+                            final String both = lname.toUpperCase() + "," + upperString;
+
+                            System.out.println("dddddddd  " + dateofBirth + "  " + mAge + " " + both);
+
+
+
+                            Date c = Calendar.getInstance().getTime();
+
+                            System.out.println("Current time => " + c);
+
+                            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy");
+
+                            final String formattedDate = df.format(c);
+
+                            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+
+                            intent.putExtra("fullName", both);
+
+                            intent.putExtra("age", mAge);
+
+                            intent.putExtra("currentdate", formattedDate);
+
+                            intent.putExtra("grossInc", grossInc);
+
+                            intent.putExtra("rrspContribution", rrspcntrr);
+
+                            startActivity(intent);
 
     }
     //test
