@@ -24,6 +24,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         fullName = (TextView)findViewById(R.id.txtfullName);
+        Age = (TextView)findViewById(R.id.txtage);
         
 
     }
