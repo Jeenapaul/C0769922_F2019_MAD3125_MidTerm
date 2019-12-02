@@ -197,6 +197,112 @@ public class MainActivity extends AppCompatActivity {
                         int eighth = Integer.parseInt(eightDigits.substring(7, 8)) * 2;
 
 
+                        if (second > 9) {
+
+
+
+                            int firstHalf = second / 10;
+
+
+
+                            int secondHalf = second % 10;
+
+
+
+                            int sum = firstHalf + secondHalf;
+
+
+
+                            second = sum;
+
+
+
+                        }
+
+
+
+                        if (fourth > 9) {
+
+
+
+                            int firstHalf1 = fourth / 10;
+
+
+
+                            int secondHalf1 = fourth % 10;
+
+
+
+                            int sum1 = firstHalf1 + secondHalf1;
+
+
+
+                            fourth = sum1;
+
+
+
+                        }
+
+
+
+                        if (sixth > 9) {
+
+
+
+                            int firstHalf2 = sixth / 10;
+
+
+
+                            int secondHalf2 = sixth % 10;
+
+
+
+                            int sum2 = firstHalf2 + secondHalf2;
+
+
+
+                            sixth = sum2;
+
+
+
+                        }
+
+
+
+                        if (eighth > 9) {
+
+
+
+                            int firstHalf3 = eighth / 10;
+
+
+
+                            int secondHalf3 = eighth % 10;
+
+
+
+                            int sum3 = firstHalf3 + secondHalf3;
+
+
+
+                            eighth = sum3;
+
+
+
+                        }
+
+
+
+                        total = first + second + third + fourth + fifth + sixth + seventh + eighth;
+
+
+
+                        System.out.println("This is the total so far: " + total);
+
+
+
+                        total2 = total;
+
     }
     //test
 }
