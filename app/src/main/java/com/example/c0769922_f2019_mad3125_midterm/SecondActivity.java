@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
-    TextView fName;
+    TextView fullName;
     TextView Age;
     TextView taxfilingdate;
     TextView federalTax;
@@ -23,5 +23,8 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        fullName = (TextView)findViewById(R.id.txtfullName);
+        
+
     }
 }
