@@ -21,5 +21,15 @@
         android:textSize="20dp"
         android:id="@+id/txtFirst"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtFirst"
+        android:textSize="20dp"
+        android:id="@+id/txtLast"/>
+
+
 
 </RelativeLayout>
