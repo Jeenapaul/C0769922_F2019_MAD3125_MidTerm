@@ -12,36 +12,68 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText sin;
+
+    EditText firstName;
+
+    EditText lastName;
+
+    EditText birth;
+
+    EditText income;
+
+    EditText RRSP;
+
+    RadioGroup genderGroup;
+
+    RadioButton radioGenderButton;
+
+    Calendar myCalendar = Calendar.getInstance();
+
+    private Calendar calendar;
+
+    int day, month, year;
+
+    private DatePickerDialog datePickerDialog;
+
+    private int remaining;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText sin;
+        sin = (EditText) findViewById(R.id.txtSinNumber);
 
-        EditText firstName;
+        firstName = (EditText) findViewById(R.id.txtFirstName);
 
-        EditText lastName;
+        lastName = (EditText) findViewById(R.id.txtlastName);
 
-        EditText birth;
+        birth = (EditText) findViewById(R.id.dob);
 
-        EditText income;
+        income = (EditText) findViewById(R.id.txtIncome);
 
-        EditText RRSP;
+        RRSP = (EditText) findViewById(R.id.txtRrspContributed);
 
-        RadioGroup genderGroup;
+        genderGroup = (RadioGroup) findViewById(R.id.radioGroup1);
 
-        RadioButton radioGenderButton;
 
-        Calendar myCalendar = Calendar.getInstance();
 
-        private Calendar calendar;
 
-        int day, month, year;
 
-        private DatePickerDialog datePickerDialog;
+        int selectedId = genderGroup.getCheckedRadioButtonId();
 
-        private int remaining;
+        radioGenderButton = (RadioButton) findViewById(selectedId);
+
+        calendar = Calendar.getInstance();
+
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        month = calendar.get(Calendar.MONTH);
+
+        year = calendar.get(Calendar.YEAR);
+
+
+
     }
     //test
 }
