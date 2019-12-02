@@ -1,14 +1,18 @@
 package com.example.c0769922_f2019_mad3125_midterm;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,6 +75,69 @@ public class MainActivity extends AppCompatActivity {
         month = calendar.get(Calendar.MONTH);
 
         year = calendar.get(Calendar.YEAR);
+
+
+
+        birth.setOnClickListener(new View.OnClickListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.N)
+
+            @Override
+
+            public void onClick(View v) {
+
+                Calendar cal = Calendar.getInstance();
+
+                int year = cal.get(Calendar.YEAR);
+
+                int month = cal.get(Calendar.MONTH);
+
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(),android.R.style.Theme_Black, datePickerListener, year,month,day);
+
+                datePickerDialog.getDatePicker().setMaxDate(new Date().getTime());
+
+                datePickerDialog.show();
+
+            }
+
+        });
+
+
+
+        findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View v) {
+
+                if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
+
+
+
+                    String sinNum = String.valueOf(sin.getText());
+
+                    String dateofBirth = String.valueOf(birth.getText());
+
+                    final String mAge = String.valueOf(getAge(dateofBirth));
+
+                    String fname = String.valueOf(firstName.getText());
+
+                    String lname = String.valueOf(lastName.getText());
+
+                    String grsinc = String.valueOf(income.getText());
+
+                    String rrspcntr = String.valueOf(RRSP.getText());
+
+                    double grossInc = Double.parseDouble(grsinc);
+
+                    double rrspcntrr = Double.parseDouble(rrspcntr);
+
+                    int ageee = Integer.parseInt(mAge);
+
 
 
 
