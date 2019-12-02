@@ -25,7 +25,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         fullName = (TextView)findViewById(R.id.txtfullName);
         Age = (TextView)findViewById(R.id.txtage);
-        
+        taxfilingdate = (TextView)findViewById(R.id.taxFilingdate);
+        federalTax = (TextView)findViewById(R.id.txtfederalTax);
 
+        
     }
 }
