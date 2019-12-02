@@ -11,4 +11,15 @@
         android:hint="Enter your sin Number"
         android:textSize="30dp"
         android:id="@+id/Sin"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/Sin"
+        android:textSize="20dp"
+        android:id="@+id/txtFirst"/>
+
+
 </RelativeLayout>
