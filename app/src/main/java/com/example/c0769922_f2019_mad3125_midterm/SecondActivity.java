@@ -54,6 +54,8 @@ public class SecondActivity extends AppCompatActivity {
         }else if (federalTax >= 210371.01){
             federalTax = (federalTax/100)*33;
         }
+        String finalresult = String.valueOf(federalTax);
+
 
     }
 }
