@@ -56,8 +56,22 @@ public class SecondActivity extends AppCompatActivity {
         }
         String finalresult = String.valueOf(federalTax);
         fedTax.setText(finalresult+"$");
+        double pT = getIntent().getDoubleExtra("grossInc",0);
 
-
+        if (pT <= 10582){
+            pT = pT;
+        }else if (pT >= 10582.01 && pT <= 43906){
+            pT = (pT/100)*5.05;
+        }else if (pT >= 43906.01 && pT <= 87813){
+            pT = (pT/100)*9.15;
+        }else if (pT >= 87813.01 && pT<= 150000){
+            pT = (pT/100)*11.16;
+        }else if (pT >= 150000.01 && pT <= 220000){
+            pT = (pT/100)*12.16;
+        }else if (pT >= 220000.01){
+            pT = (pT/100)*13.16;
+        }
+       
 
 
     }
