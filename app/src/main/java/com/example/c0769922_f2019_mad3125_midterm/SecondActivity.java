@@ -34,7 +34,15 @@ public class SecondActivity extends AppCompatActivity {
         carryFrwdRRSP = (TextView)findViewById(R.id.txtRrspContributed);
         ttaxinc = (TextView)findViewById(R.id.txtIncome);
         //taxPaid = (TextView)findViewById(R.id.txt);
-        
+        String fname = getIntent().getStringExtra("fullName");
+        String age = getIntent().getStringExtra("age");
+        String cdate = getIntent().getStringExtra("currentdate");
+        fullName.setText(fname);
+        Age.setText(age);
+        taxfilingdate.setText(cdate);
+        double federalTax = getIntent().getDoubleExtra("grossInc",0);
+        if (federalTax <= 12069){
+            federalTax = federalTax;
 
     }
 }
