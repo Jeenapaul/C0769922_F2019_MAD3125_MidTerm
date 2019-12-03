@@ -71,6 +71,13 @@ public class SecondActivity extends AppCompatActivity {
         }else if (pT >= 220000.01){
             pT = (pT/100)*13.16;
         }
+
+        String finalPT = String.valueOf(pT);
+        provincialTax.setText(finalPT+"$");
+
+        double cppcontr = getIntent().getDoubleExtra("grossInc",0);
+        double contribution = (cppcontr/100)*5.10;
+
        
 
 
