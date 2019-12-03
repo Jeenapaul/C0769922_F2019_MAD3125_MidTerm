@@ -78,7 +78,9 @@ public class SecondActivity extends AppCompatActivity {
         double cppcontr = getIntent().getDoubleExtra("grossInc",0);
         double contribution = (cppcontr/100)*5.10;
 
-       
+        String finalcfwdcpp = String.valueOf(contribution);
+        carryFrwdCpp.setText(finalcfwdcpp+"$");
+
 
 
     }
